@@ -2,7 +2,9 @@
 
 ### 0. environment
 - Ubuntu 20.04
-- python3, pip3 update
+- python3
+
+### 0.1. pip3 update
 ```
 pip3 install -U pip
 ```
