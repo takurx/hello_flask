@@ -62,3 +62,4 @@ mysql> select * from testdb.members;
 2. https://rfs.jp/sb/sql/s03/03-15.html
 
 test
+test2
