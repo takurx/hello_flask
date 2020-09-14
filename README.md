@@ -35,9 +35,9 @@ sudo mysql -u root -p
 - default password: ""(one), user access denied, you have to make user
 
 ```
-mysql> members;
+mysql> create database rabbit_house;
 mysql> show databases;
-mysql> use members;
+mysql> use rabbit_house;
 mysql> show tables;
 mysql> create table members (
     -> id int not null primary key auto_increment,
@@ -45,18 +45,30 @@ mysql> create table members (
     -> email varchar(256) not null unique);
 mysql> show tables;
 mysql> desc members;
-mysql> alter table members
-    -> rename to member;
-mysql> create user dbtest@'localhost' identified by 'root';
+mysql> create user 'tippy'@'localhost' identified by 'root';
 mysql> select user, host from mysql.user;
 mysql> show grants for 'root'@'localhost';
-mysql> show grants for 'dbtest'@'localhost';
-mysql> grant all on *.* to 'dbtest'@'localhost' with grant option;
+mysql> show grants for 'tippy'@'localhost';
+mysql> grant all on *.* to 'tippy'@'localhost' with grant option;
 mysql> flush privileges;
-mysql> INSERT testdb.members SET name='エラ・フィッツジェラルド',email='ella@exsample.jp';
-mysql> INSERT testdb.members SET name='トミー・ゲレロ',email='tommy@exsample.jp';
-mysql> INSERT testdb.members SET name='マディ・ウォーターズ',email='muddy@exsample.jp';
-mysql> select * from testdb.members;
+mysql> INSERT rabbit_house.members SET name='Chino Kafu',email='chino_kafu@is-your-order.rb';
+mysql> INSERT rabbit_house.members SET name='Rize Tedeza',email='rize_tedeza@is-your-order.rb';
+mysql> INSERT rabbit_house.members SET name='Cocoa Hoto',email='cocoa_hoto@is-your-order.rb';
+mysql> select * from rabbit_house.members;
+```
+
+### Extra. delete database
+- finish, exit database
+```
+mysql> exit;
+```
+- delete database
+```
+mysql> drop database rabbit_house
+```
+- rename table
+```
+mysql> alter table members rename to worker;
 ```
 
 ### Reference
